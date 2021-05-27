@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <title>MAZETRO</title>
+    <link rel="shortcut icon" href="assets/logo.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/e2dc310ef3.js" crossorigin="anonymous"></script>
+    <script defer src="cashier.js"></script>
+  </head>
+  <body>
+      <div class="container" id="form">
+        <center><img src="assets/icon.png" height="80px" width="350px"/></center>
+          <form name="form">
+              <table cellpadding="7">
+                  <tr>
+                      <td colspan="2" >
+                        <label>Nama</label>
+                      </td>
+                      <td colspan="2">
+                        <input type="text" name="input_nama" class="input">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                        <label>Kategori</label>
+                      </td>
+                      <td>
+                        <select name="input_barang" onchange="munculhargabarang()">
+                          <option value="baju">--Pilih--</option>
+                          <option value="baju">Baju</option>
+                          <option value="jacket">Jacket</option>
+                          <option value="sweater">Sweater</option>
+                          <option value="celana">Celana</option>
+                          <option value="sepatu">Sepatu</option>
+                          <option value="sandal">Sandal</option>
+                        </select>
+                      </td>
+                      <td>
+                        <label>Harga</label>
+                      </td>
+                      <td>
+                        <input type="text" name="output_hargabarang" size=10>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                        <label>Member?</label>
+                      </td>
+                      <td>
+                        <input type="checkbox" name="memberbukan" onchange="apakahmember()"/>
+                      </td>
+                      <td>
+                        <label>Diskon</label>
+                      </td>
+                      <td>
+                        <input type="text" name="output_diskon" size=10/>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">
+                        <label>Jumlah Barang</label>
+                      </td>
+                      <td colspan="2">
+                        <input type="number" name="input_jumlahbarang" size="10" class="input">
+                      </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <input type="button" onclick="totalharga()" value='Hitung'>
+                      <input type="reset" value='Clear'>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><label>Total Harga</label></td>
+                      <td colspan="2"><input type="text" name="output_totalharga" size="10" class="input"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><label>Tunai</label></td>    
+                      <td colspan="2"><input type="number" name="input_tunai" size="10" class="input"></td>
+                  </tr>
+                  <tr>    
+                      <td colspan="2"><label>Kembali</label></td>
+                      <td colspan="2"><input type="text" name="output_kembali" class="input"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      <input type="button" onclick="kembali()" value='Hitung'>
+                      <input type="button" onclick="cetakstruk()" value="Cetak Struk">
+                    </td>
+                  </tr>
+              </table>
+          </form>
+      </div>
+      <div id="hasil">
+        <center><img src="assets/icon.png" height="50px"/></center>
+        <p class="text">TAMAN ELANG</p>
+        <p class="text">JL. PERUM TAMAN ELANG BLOK CA.15</p>
+        <br>
+        <p class="text">SLIP PEMBAYARAN</p>
+        <p id="cetak" style="font-size: 16px;"></p>
+        <br>
+        <p class="text">LAYANAN KONSUMEN SMS</p>
+        <p class="text">0833 4527 1345</p>
+        <button onclick="window.print()" >Cetak</button>
+        <button onclick="location.reload()">Back</button>
+      </div>
+      <br><br>
+      <a id="team" class="btn" onclick="tentangkami()">Tentang Kami</a>
+      <div id="about">
+        <center><h1 style="color: rgb(66, 64, 64);">TIM KAMI</h1></center>
+        <div class="gallery">
+          <img src="assets/hanif.png" alt="Cinque Terre" width="600" height="400">
+          <div class="desc">M Hanif Santoso 200411100078</div>
+          <center><span class="icon"><a href="https://github.com/HanifSantoso05"><i class="fab fa-github"></i></a></span></center>
+        </div>
+        
+        <div class="gallery">
+          <img src="assets/rizki.jpg" alt="Forest" width="600" height="400">
+          <div class="desc">M Rizki Aji Santoso 200411100086</div>
+          <center><span class="icon"><a href="https://github.com/rizkyluxszerr"><i class="fab fa-github"></i></a></span></center>
+        </div>
+        
+        <div class="gallery">
+          <img src="assets/yusril.jpg" alt="Northern Lights" width="600" height="400">
+          <div class="desc">Bachtiar Dwi Yusril R. 200411100118</div>
+          <center><span class="icon"><a href="https://github.com/bchtryusril17"><i class="fab fa-github"></i></a></span></center>
+        </div>
+      </div>
+      <div id="back" style="display: none;">
+        <a class="btn" onclick="location.reload()">Back</a>
+      </div>
+  </body>
+</html>
